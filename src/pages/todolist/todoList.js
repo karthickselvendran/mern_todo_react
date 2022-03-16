@@ -16,7 +16,7 @@ export const TodoList = () => {
         console.log(userData)
         if (!userData) {
             // navigate('./todolist')
-            window.location.replace('/')
+            window.location.replace('/mern_todo_react/')
         }
     })
 
@@ -80,7 +80,7 @@ export const TodoList = () => {
 
     const logout = () => {
         localStorage.clear();
-        window.location.replace('/')
+        window.location.replace('/mern_todo_react/')
     }
 
     return (
