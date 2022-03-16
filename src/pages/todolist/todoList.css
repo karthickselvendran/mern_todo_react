@@ -25,7 +25,7 @@ input{
   padding-left: 15px;
 }
 
-[type="submit"]{
+/* [type="submit"]{
   margin: 15px;
   border-radius: 10px;
   cursor: pointer;
@@ -34,7 +34,7 @@ input{
   border: none;
   font-size: 19px;
   padding: 10px 20px;
-}
+} */
 
 .curptr{
   cursor: pointer;

@@ -33,7 +33,7 @@ export const TodoList = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!value.trim()) return;
+        if (!value.trim()) return toast.error('Please type a some totos to Add');
         let data = { todoList: `${value}` }
         if (editIndex === '') {
             await addTodoListApi(data).then((res) => {
@@ -96,11 +96,11 @@ export const TodoList = () => {
 
             <div className="list">
                 {
-                    todoList.length ?
+                    todoList && todoList.length ?
                         <div className="listHeading"><h2>All Lists</h2><button className="deleteAll" onClick={deleteAll} >Delete All</button></div> : null
                 }
                 {
-                    todoList.length ? todoList.map((item, index) => {
+                    todoList && todoList.length ? todoList.map((item, index) => {
                         return (
                             <div className="eachList fs20" key={item._id}>
                                 <span>{index + 1 + "."}</span>&nbsp;&nbsp;&nbsp;<span className="text">{item.todoList}</span> &nbsp;&nbsp;&nbsp;

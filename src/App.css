@@ -2,7 +2,6 @@ body{
   margin: 0;
   padding: 0;
   background-color: paleturquoise;
-  /* height: 100%; */
   background-image: linear-gradient(to right top, #528de6, #528de6, #528de6, #528de6, #528de6);
 }
 
@@ -20,12 +19,6 @@ body{
   margin-top: 250px;
 }
 
-/* .logout{
-  position: relative;
-  right: 0;
-  margin: 10px;
-  background-color: #ff5100;
-} */
 .heading{
   color: whitesmoke;
 }
