@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// export const API = "https://mern-todo-app-karthick.herokuapp.com"
-const API = "http://localhost:8000"
+export const API = "https://mern-todo-app-karthick.herokuapp.com"
+// const API = "http://localhost:8000"
 
 const userData = JSON.parse(localStorage.getItem('userData'))
 
