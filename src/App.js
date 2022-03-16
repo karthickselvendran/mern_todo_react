@@ -13,11 +13,11 @@ export const App = () => {
       <Router>
         <ToastContainer />
         <Routes>
-          <Route path='/' element={<SignIn />} />
-          <Route path='/signin' element={<SignIn />} />
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/todolist' element={<TodoList />} />
-          <Route path='/*' element={<h3 className='wrongRoute'>Please check the url</h3>} />
+          <Route path='/mern_todo_react/' element={<SignIn />} />
+          <Route path='/mern_todo_react/signin' element={<SignIn />} />
+          <Route path='/mern_todo_react/signup' element={<SignUp />} />
+          <Route path='/mern_todo_react/todolist' element={<TodoList />} />
+          <Route path='/mern_todo_react/*' element={<h3 className='wrongRoute'>Please check the url</h3>} />
         </Routes>
       </Router>
 
