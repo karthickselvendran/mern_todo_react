@@ -18,7 +18,7 @@ export const SignIn = () => {
         console.log(userData)
         if (userData && userData.userToken) {
             // navigate('./todolist')
-            window.location.replace('/mern_todo_react/todolist')
+            window.location.replace('/todolist')
         }
     })
 
@@ -39,7 +39,7 @@ export const SignIn = () => {
             .then((res) => {
                 if (res.data.status === 200) {
                     localStorage.setItem('userData', JSON.stringify(res.data))
-                    toast.success('sign successfully')
+                    // toast.success('sign successfully')
                     setUserDetails(initialState)
                     navigate('/todolist')
                 } else {

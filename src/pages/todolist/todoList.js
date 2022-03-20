@@ -4,7 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import { getTodoListApi, addTodoListApi, updateTodoListApi, deleteTodoListApi, deleteAllTodoListApi } from '../../service/service';
 import { toast } from 'react-toastify';
 import "./todoList.css";
-
+import svg from '../../assets/logout.svg'
 export const TodoList = () => {
 
     const [value, setValue] = useState('');
@@ -16,7 +16,7 @@ export const TodoList = () => {
         console.log(userData)
         if (!userData) {
             // navigate('./todolist')
-            window.location.replace('/mern_todo_react/')
+            window.location.replace('/')
         }
     })
 
@@ -80,18 +80,18 @@ export const TodoList = () => {
 
     const logout = () => {
         localStorage.clear();
-        window.location.replace('/mern_todo_react/')
+        window.location.replace('/')
     }
 
     return (
         <div className="App">
 
+            {/* <button className="logout" onClick={() => logout()}>Logout</button> */}
             <h1 className="heading">Todo List</h1>
-
+            <img className="logout" src={svg} height='30' onClick={logout} />
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="todo..." value={value} onChange={(e) => setValue(e.target.value)} autoFocus /><br />
                 <button type="submit">Add</button>
-                <button className="logout" onClick={logout}>Logout</button>
             </form>
 
             <div className="list">

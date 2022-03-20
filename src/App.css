@@ -31,6 +31,11 @@ input{
   outline: none;
   padding-left: 15px;
 }
+.logout{
+  position: fixed;
+  top: 0;
+  right: 0;
+}
 
 [type="submit"], .logout{
   margin: 15px;

@@ -19,7 +19,7 @@ export const SignUp = () => {
         console.log(userData)
         if(userData && userData.userToken){
             // navigate('./todolist')
-            window.location.replace('/mern_todo_react/todolist')
+            window.location.replace('/todolist')
         }
     })
 
