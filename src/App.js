@@ -13,10 +13,11 @@ function App() {
       <Router>
         <ToastContainer />
         <Routes>
+          <Route path='' element={<SignIn />} />
           <Route path='/' element={<SignIn />} />
-          <Route path='/signin' element={<SignIn />} />
-          <Route path='/signup' element={<SignUp />} />
-          <Route path='/todolist' element={<TodoList />} />
+          <Route path='signin' element={<SignIn />} />
+          <Route path='signup' element={<SignUp />} />
+          <Route path='todolist' element={<TodoList />} />
           <Route path='*' element={
             <main className='wrongRoute'>
               <p>There's nothing here, Please check the url!</p>
