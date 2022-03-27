@@ -6,11 +6,10 @@ import { SignUp } from './pages/signup/signup';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
 
-export const App = () => {
+function App() {
 
   return (
     <div>
-      <h1>MERN Todo</h1>
       <Router>
         <ToastContainer />
         <Routes>
@@ -29,3 +28,5 @@ export const App = () => {
     </div>
   )
 }
+
+export default App;
