@@ -17,7 +17,11 @@ export const App = () => {
           <Route path='/signin' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/todolist' element={<TodoList />} />
-          <Route path='/*' element={<h3 className='wrongRoute'>Please check the url</h3>} />
+          <Route path='*' element={
+            <main className='wrongRoute'>
+              <p>There's nothing here, Please check the url!</p>
+            </main>
+          } />
         </Routes>
       </Router>
 

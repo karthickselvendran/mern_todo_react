@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { signupService } from '../../service/service';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const initialState = {
@@ -14,12 +14,10 @@ export const SignUp = () => {
     const navigate = useNavigate()
     const [userDetails, setUserDetails] = useState(initialState);
 
-    useEffect(()=>{
+    useEffect(() => {
         const userData = JSON.parse(localStorage.getItem('userData'))
-        console.log(userData)
-        if(userData && userData.userToken){
-            // navigate('./todolist')
-            window.location.replace('/todolist')
+        if (userData && userData.userToken) {
+            navigate('/todolist')
         }
     })
 
@@ -42,17 +40,14 @@ export const SignUp = () => {
                     toast.success('signup successfully')
                     setUserDetails(initialState)
                 } else {
-                    console.log(res)
                     toast.error(res.data.message)
                 }
             })
             .catch((err) => {
-                console.log(err)
                 toast.error(err.message)
             })
     }
 
-    console.log(userDetails)
     return (
         <div className='container'>
             <div className='card'>
@@ -105,7 +100,9 @@ export const SignUp = () => {
                     />
                     <br />
                     <br />
-                    <a href='/signin'>Already have an account? Signin</a>
+                    <Link to="/signin">
+                        <span>Already have an account? Signin</span>
+                    </Link>
                 </form>
             </div>
         </div>

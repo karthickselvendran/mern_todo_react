@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { signinService } from '../../service/service';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './signin.css';
 
 const initialState = {
@@ -15,10 +15,8 @@ export const SignIn = () => {
 
     useEffect(() => {
         const userData = JSON.parse(localStorage.getItem('userData'))
-        console.log(userData)
         if (userData && userData.userToken) {
-            // navigate('./todolist')
-            window.location.replace('/todolist')
+            navigate('/todolist', { state: "karthick" })
         }
     })
 
@@ -38,17 +36,15 @@ export const SignIn = () => {
         signinService(userDetails)
             .then((res) => {
                 if (res.data.status === 200) {
-                    localStorage.setItem('userData', JSON.stringify(res.data))
-                    // toast.success('sign successfully')
+                    localStorage.setItem('userData', JSON.stringify(res.data.userData))
                     setUserDetails(initialState)
-                    navigate('/todolist')
+                    // navigate('/todolist')
+                    window.location.replace('/todolist');
                 } else {
-                    console.log(res)
                     toast.error(res.data.message)
                 }
             })
             .catch((err) => {
-                console.log(err)
                 toast.error(err.message)
             })
     }
@@ -85,7 +81,9 @@ export const SignIn = () => {
                     />
                     <br />
                     <br />
-                    <a href='/signup'>Are you New user? Signup</a>
+                    <Link to="/signup">
+                        <span>Are you New user? Signup</span>
+                    </Link>
                 </form>
             </div>
         </div>
