@@ -10,6 +10,7 @@ export const App = () => {
 
   return (
     <div>
+      <h1>MERN Todo</h1>
       <Router>
         <ToastContainer />
         <Routes>
